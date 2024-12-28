@@ -1,0 +1,13 @@
+displayName: Require Auth Headers
+type: middleware
+
+import: github.com/unsoon/traefik-require-auth-headers
+
+summary: "🔎 A simple traefik plugin that requires certain auth headers to be present in the request headers. If not present, returns a custom error response."
+
+testData:
+  requiredHeaders: ["Basic"]
+  errorResponse:
+    statusCode: 401
+    headers:
+      WWW-Authenticate: Basic realm="Please login"
